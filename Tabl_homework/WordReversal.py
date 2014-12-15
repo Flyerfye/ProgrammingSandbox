@@ -1,5 +1,5 @@
 import re
-
+#checks if input_char is a single letter
 def is_letter(input_char):
     if len(input_char) != 1:
         return False
@@ -8,7 +8,8 @@ def is_letter(input_char):
     else:
         return False
         
-
+# implemented so that it will only reverse words with letters
+# numbers will be treated as delimiters and will not be reversed
 def word_reverse(input_string):
     curr_word = ""
     prev_type = ""
@@ -19,7 +20,6 @@ def word_reverse(input_string):
     delim_list = []
     
     for i in range(0, len(input_string)):
-#         print input_string[i]
         if(prev_type == ""):
             prev_type = is_letter(input_string[i])
             curr_word = input_string[i]

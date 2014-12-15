@@ -20,7 +20,7 @@ sort_list(example_list)
 print example_list
 val_in_list(example_list, 5)
 val_in_list(example_list, 8)
-
+ 
 print "\n"
 print example_string
 reversed_string = word_reverse(example_string)

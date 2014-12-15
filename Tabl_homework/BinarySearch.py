@@ -4,7 +4,7 @@ def binary_search(sorted_list, val):
     right = len(sorted_list) - 1
     mid = -1
 
-    while(left < right):
+    while(left <= right):
         mid = int((left + right)/2)
         cur_val = sorted_list[mid]
         
@@ -17,8 +17,8 @@ def binary_search(sorted_list, val):
     
     return -1
     
-# calls quick sort function to sort the input list
-# no return value because lists are mutable in Python
+#calls quick sort function to sort the input list
+#no return value necessary because lists are mutable in Python
 def sort_list(input_list):
     quick_sort(input_list, 0, len(input_list)-1)
     
@@ -26,10 +26,13 @@ def quick_sort(input_list, low, high):
     if low < high:
         # partition the array
         index = partition(input_list, low, high)
-        
+
         # call quick sort on left and right side of partition
         quick_sort(input_list, low, index - 1)
         quick_sort(input_list, index + 1, high)
+        
+        # returning index to be used in unit-testing
+        return index
     
 def partition(input_list, low, high):
     # set last element as partition
